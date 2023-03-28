@@ -28,9 +28,7 @@ async def ping_task():
 async def on_ready():
     pingr.loop.create_task(ping_task())
 
-@pingr.slash_command(guild_ids=[guildid])
-async def ping(ctx):
-    await ctx.respond(f"{round(pingr.latency * 1000)}ms")
+
 
 
 pingr.run(bottoken)
